@@ -1,4 +1,5 @@
 const config = {
+  STRIPE_KEY: "YOUR_STRIPE_PUBLIC_KEY",
   // Backend config
   s3: {
     REGION: process.env.REACT_APP_REGION,
@@ -14,6 +15,7 @@ const config = {
     APP_CLIENT_ID: process.env.REACT_APP_USER_POOL_CLIENT_ID,
     IDENTITY_POOL_ID: process.env.REACT_APP_IDENTITY_POOL_ID,
   },
+  MAX_ATTACHMENT_SIZE: 5000000,
 };
 
 export default config;

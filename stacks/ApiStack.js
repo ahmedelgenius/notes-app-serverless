@@ -13,8 +13,8 @@ export function ApiStack({ stack, app }) {
           TABLE_NAME: table.tableName,
           STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY,
         },
-        authorizer: "iam",
       },
+      authorizer: "iam",
     },
     routes: {
       "POST /notes": "functions/create.main",
