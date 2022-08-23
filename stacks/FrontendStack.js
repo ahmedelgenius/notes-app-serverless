@@ -10,17 +10,17 @@ export function FrontendStack({ stack, app }) {
 
   // Define our React app
   const site = new ReactStaticSite(stack, "ReactSite", {
-    customDomain:
-      app.stage === "prod"
-        ? {
-            domainName: "my-serverless-app.com",
-            domainAlias: "www.my-serverless-app.com",
-          }
-        : undefined,
+    // customDomain:
+    //   app.stage === "prod"
+    //     ? {
+    //         domainName: "my-serverless-app.com",
+    //         domainAlias: "www.my-serverless-app.com",
+    //       }
+    //     : undefined,
     path: "frontend",
     // Pass in our environment variables
     environment: {
-      REACT_APP_API_URL: api.customDomainUrl || api.url,
+      REACT_APP_API_URL: api.url,
       REACT_APP_REGION: app.region,
       REACT_APP_BUCKET: bucket.bucketName,
       REACT_APP_USER_POOL_ID: auth.userPoolId,
@@ -30,6 +30,6 @@ export function FrontendStack({ stack, app }) {
   });
 
   stack.addOutputs({
-    SiteUrl: site.customDomainUrl || site.url,
+    SiteUrl: site.url,
   });
 }
