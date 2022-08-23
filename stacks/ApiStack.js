@@ -14,9 +14,9 @@ export function ApiStack({ stack, app }) {
           STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY,
         },
       },
+      authorizer: "iam",
       // customDomain:
       //   app.stage === "prod" ? "api.my-serverless-app.com" : undefined,
-      authorizer: "iam",
     },
     routes: {
       "POST /notes": "functions/create.main",
