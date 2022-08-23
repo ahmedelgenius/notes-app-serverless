@@ -28,7 +28,7 @@ export function FrontendStack({ stack, app }) {
       REACT_APP_USER_POOL_CLIENT_ID: auth.userPoolClientId,
     },
   });
-
+  // change the custome api
   stack.addOutputs({
     SiteUrl: site.url,
   });
