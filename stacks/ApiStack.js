@@ -16,7 +16,7 @@ export function ApiStack({ stack, app }) {
       },
       // customDomain:
       //   app.stage === "prod" ? "api.my-serverless-app.com" : undefined,
-      // authorizer: "iam",
+      authorizer: "iam",
     },
     routes: {
       "POST /notes": "functions/create.main",
