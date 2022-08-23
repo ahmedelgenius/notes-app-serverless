@@ -14,9 +14,9 @@ export function ApiStack({ stack, app }) {
           STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY,
         },
       },
-      customDomain:
-        app.stage === "prod" ? "api.my-serverless-app.com" : undefined,
-      authorizer: "iam",
+      // customDomain:
+      //   app.stage === "prod" ? "api.my-serverless-app.com" : undefined,
+      // authorizer: "iam",
     },
     routes: {
       "POST /notes": "functions/create.main",
@@ -30,7 +30,7 @@ export function ApiStack({ stack, app }) {
 
   // Show the API endpoint in the output
   stack.addOutputs({
-    ApiEndpoint: api.customDomainUrl || api.url,
+    ApiEndpoint: api.url,
   });
   // Return the API resource
   return {
