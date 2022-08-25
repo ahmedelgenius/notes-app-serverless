@@ -1,15 +1,14 @@
 before_build:
   - echo 'export CI=false' >> $BASH_ENV
   - cd frontend && npm install
+# before_compile:
+#   - echo "Before compile"
 
-before_compile:
-  - echo "Before compile"
+# #compile:
+# #  - echo "Override compile"
 
-#compile:
-#  - echo "Override compile"
+# # before_build:
+# #   - echo "Before build"
 
-# before_build:
-#   - echo "Before build"
-
-before_deploy:
-  - echo "Before deploy"
+# before_deploy:
+#   - echo "Before deploy"
