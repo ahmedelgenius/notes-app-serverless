@@ -13,12 +13,3 @@ before_compile:
 
 before_deploy:
   - echo "Before deploy"
-
-after_deploy:
-  - echo "After deploy"
-
-before_remove:
-  - echo "Before deploy"
-
-after_remove:
-  - echo "After deploy"
